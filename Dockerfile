@@ -130,7 +130,6 @@ RUN echo "LoadModule rewrite_module modules/mod_rewrite.so" >> /etc/apache2/http
 
 
 RUN \
-    apt-get -y remove --purge build-essential php-pear php5.6-dev git cmake make g++ &&\
     apt-get -y autoremove &&\
     apt-get -y clean &&\
     rm -rf /var/lib/apt/lists/*
