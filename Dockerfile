@@ -83,11 +83,15 @@ RUN apt-get update && \
     zlibc \
     && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz &&\
-    tar -xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz &&\
-    cd wkhtmltox/bin ; mv wkhtmltopdf /usr/bin/wkhtmltopdf &&\
-    chmod +x /usr/bin/wkhtmltopdf &&\
-    wget https://github.com/ahgora/confd/blob/master/confd?raw=true -O /usr/local/bin/confd && \
+RUN apt-get update && \ 
+    apt-get install -y --no-install-recommends \ 
+    xfonts-75dpi \
+    fontconfig \
+    xfonts-base && \
+    wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.5/wkhtmltox_0.12.5-1.xenial_amd64.deb &&\
+    dpkg -i wkhtmltox_0.12.5-1.xenial_amd64.deb
+
+RUN wget https://github.com/ahgora/confd/blob/master/confd?raw=true -O /usr/local/bin/confd && \
     chmod +x /usr/local/bin/confd && \
     cd /tmp && rm -Rf *
 
