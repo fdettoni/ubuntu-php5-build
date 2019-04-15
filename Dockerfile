@@ -101,7 +101,7 @@ RUN mkdir -p /opt/newrelic && \
     wget http://download.newrelic.com/php_agent/release/newrelic-php5-8.6.0.238-linux.tar.gz  -O newrelic-php5-linux.tar.gz &&\
     tar -zxvf newrelic-php5-linux.tar.gz  && \
     rm newrelic-php5-linux.tar.gz && \
-    cd /opt/newrelic/newrelic-php5-8.3.0.226-linux/ && \
+    cd /opt/newrelic/newrelic-php5-8.6.0.238-linux/ && \
     sh newrelic-install install
 
 # Variables for enabling NewRelic
