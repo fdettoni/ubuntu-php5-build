@@ -43,7 +43,7 @@ RUN apt-get update && \
     libpcre3-dev \
     libstdc++-5-dev \
     libstdc++5 \
-    libuv-dev \
+    libuv1-dev \
     libx11-6 \
     libxext-dev \
     libxext6 \
