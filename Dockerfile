@@ -98,7 +98,7 @@ RUN wget https://github.com/ahgora/confd/blob/master/confd?raw=true -O /usr/loca
 # Instação do NewRelic agent
 RUN mkdir -p /opt/newrelic && \
     cd /opt/newrelic && \
-    wget http://download.newrelic.com/php_agent/release/newrelic-php5-8.3.0.226-linux.tar.gz  -O newrelic-php5-linux.tar.gz &&\
+    wget http://download.newrelic.com/php_agent/release/newrelic-php5-8.6.0.238-linux.tar.gz  -O newrelic-php5-linux.tar.gz &&\
     tar -zxvf newrelic-php5-linux.tar.gz  && \
     rm newrelic-php5-linux.tar.gz && \
     cd /opt/newrelic/newrelic-php5-8.3.0.226-linux/ && \
