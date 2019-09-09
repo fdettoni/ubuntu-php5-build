@@ -118,6 +118,7 @@ RUN \
     echo "extension=mongo.so" >> /etc/php/5.6/cli/php.ini &&\
     pecl install redis &&\
     echo "extension=redis.so" >> /etc/php/5.6/apache2/php.ini &&\
+    echo "extension=redis.so" >> /etc/php/5.6/cli/php.ini &&\
     sed -i 's/^short_open_tag = Off$/short_open_tag = On/' /etc/php/5.6/apache2/php.ini &&\
     locale-gen pt_BR.UTF-8 &&\
     locale-gen en_US.UTF-8
