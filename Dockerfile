@@ -116,7 +116,7 @@ RUN \
     pecl install mongo &&\
     echo "extension=mongo.so" >> /etc/php/5.6/apache2/php.ini &&\
     echo "extension=mongo.so" >> /etc/php/5.6/cli/php.ini &&\
-    pecl install redis &&\
+    pecl install redis-4.3.0 &&\
     echo "extension=redis.so" >> /etc/php/5.6/apache2/php.ini &&\
     echo "extension=redis.so" >> /etc/php/5.6/cli/php.ini &&\
     sed -i 's/^short_open_tag = Off$/short_open_tag = On/' /etc/php/5.6/apache2/php.ini &&\
