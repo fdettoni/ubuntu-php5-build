@@ -10,6 +10,7 @@ RUN LC_ALL=C.UTF-8 add-apt-repository -y ppa:ondrej/php
 RUN apt-get update && \ 
     apt-get install -y --no-install-recommends \ 
     apache2 \
+    apt-transport-https \
     apache2-utils \ 
     autoconf \
     bash \
@@ -18,6 +19,7 @@ RUN apt-get update && \
     build-essential \
     ca-certificates \
     cmake \
+    curl \
     fabric \
     flex \
     fonts-droid-fallback \
@@ -29,6 +31,7 @@ RUN apt-get update && \
     gcc \
     git \
     glibc-source \
+    gnupg-agent \
     imagemagick \
     language-pack-pt-base \
     libapache2-mod-php5.6 \
@@ -94,6 +97,11 @@ RUN apt-get update && \
 RUN wget https://github.com/ahgora/confd/blob/master/confd?raw=true -O /usr/local/bin/confd && \
     chmod +x /usr/local/bin/confd && \
     cd /tmp && rm -Rf *
+    
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - &&\
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" &&\
+    apt-get update &&\
+    apt-get install -y --no-install-recommends docker-ce
 
 # Instação do NewRelic agent
 RUN mkdir -p /opt/newrelic && \
